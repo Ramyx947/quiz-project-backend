@@ -19,8 +19,12 @@ Quiz.create({
         { option: 'Functional programming produces programs by composing mathematical functions and avoids shared state & mutable data.', 
           chosen: false,
           correct: true },
-        { option: '30', chosen: false, correct: true },
-        { option: '101', chosen: false, correct: false }
+        { option: '30',
+          chosen: false,
+          correct: false },
+        { option: '101',
+          chosen: false,
+          correct: false }
       ]
     },
     {
@@ -175,35 +179,24 @@ Quiz.create({
   ]
 })
 
-Quiz.create({
-  title: "Maduri's quiz",
-  subject: 'JS',
-  questions: [
-    {
-      text: 'Why am I still here?',
-      choices: [
-        { text: 'No idea...',
-          chosen: false,
-          correct: false },
-        { text: 'Because I rock.',
-        chosen: false, correct: true },
-        { text: 'Why do you care?', chosen: false, correct: false }
-      ]
-    }
-  ]
-})
+// Quiz.create({
+//   title: "Rails prep",
+//   subject: 'Rails',
+//   questions: [
+//     {
+//       text: 'Why am I still here?',
+//       choices: [
+//         { text: 'No idea...',
+//           chosen: false,
+//           correct: false },
+//         { text: 'Because I rock.',
+//           chosen: false,
+//           correct: true },
+//         { text: 'Why do you care?',
+//           chosen: false,
+//           correct: false }
+//       ]
+//     }
+//   ]
+// })
 
-Quiz.create({
-  title: "Ramona's quiz",
-  subject: 'JS',
-  questions: [
-    {
-      text: 'Wazzup?',
-      choices: [
-        { text: 'Not much.', chosen: false, correct: false },
-        { text: 'Having a great time with Nico.', chosen: false, correct: true },
-        { text: 'Time for a beer!', chosen: false, correct: false }
-      ]
-    }
-  ]
-})
