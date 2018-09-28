@@ -1,0 +1,33 @@
+user = {
+  name: 'Maduri',
+  scores: [
+    {
+      score: 10,
+      title: 'My JS Quiz',
+      subject: 'JS',
+      questions: [
+        {
+          text: 'Why?',
+          choices:
+            [
+              { text: 'Because...', chosen: true, correct: false }
+            ]
+        }
+      ]
+    }
+  ]
+}
+
+quiz = {
+  title: 'My JS Quiz',
+  subject: 'JS',
+  questions: [
+    {
+      text: 'Why?',
+      choices:
+        [
+          { text: 'Because...', chosen: false, correct: true }
+        ]
+    }
+  ]
+}
