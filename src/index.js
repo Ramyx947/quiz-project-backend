@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 // const cors = require('cors')
 const app = express()
-const port = 9005
+const port = 3005
 
 mongoose.connect('mongodb://localhost/quiz')
 const Quiz = require('../schemas/quiz')
