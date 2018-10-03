@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const express = require('express')
+const bodyParser = require('body-parser')
 // const cors = require('cors')
 const app = express()
 const port = 3005
@@ -7,6 +8,8 @@ const port = 3005
 mongoose.connect('mongodb://localhost/quiz')
 const Quiz = require('../schemas/quiz')
 const User = require('../schemas/user')
+
+app.use(bodyParser.json())
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -33,7 +36,16 @@ app.get('/users', function (req, res) {
 })
 
 app.get('/users/:email', function (req, res) {
-  User.findOne({ email: req.params.email }).then(users => res.send(users))
+  User.findOne({ email: req.params.email }).then(user => res.send(user))
+})
+
+app.post('/users/:email', function (req, res) {
+  const quiz = req.body.quiz
+  User.findOne({ email: req.params.email }).then(user => {
+    user.quizzes.push(quiz)
+    user.save()
+    res.send(user)
+  })
 })
 
 

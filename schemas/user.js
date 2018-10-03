@@ -7,7 +7,8 @@ const userSchema = new Schema({
   quizzes: [{
     title: { type: String, required: true, index: false },
     subject: { type: String, required: true, index: true },
-    questions: [{ text: String, choices: [{ text: String, chosen: Boolean, correct: Boolean }] }]
+    questions: [{ text: String, choices: [{ text: String, chosen: Boolean, correct: Boolean }] }],
+    score: {type: Number}
   }]
 })
 
