@@ -48,6 +48,11 @@ app.post('/users/:email', function (req, res) {
   })
 })
 
+app.post('/users', function (req, res) {
+  const user = req.body.user
+  User.create(user).then(newUser => res.send(newUser))
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
